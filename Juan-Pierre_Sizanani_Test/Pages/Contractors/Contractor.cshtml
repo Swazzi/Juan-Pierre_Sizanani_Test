@@ -1,0 +1,32 @@
+﻿@page
+@model Juan_Pierre_Sizanani_Test.Pages.Contractors.ContractorModel
+@{
+}
+
+<br>
+<h2>List of Contractors</h2>
+<a class="btn btn-primary btn-sm" href="/Contractors/Create">New Client</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var contractor in Model.listContractors)
+        {
+            <tr>
+                <td>@contractor.id</td>
+                <td>@contractor.name</td>
+                <td>@contractor.email</td>
+                <td>@contractor.phone</td>
+                <td>
+                    <a class"btn btn-primary btn-sm" href="/Contractors/ContractorVehicles?id=@contractor.id">Contractor Vehicles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@page
+@model Juan_Pierre_Sizanani_Test.Pages.Contractors.ContractorVehiclesModel
+@{
+}
+
+<br>
+<h2>Contractor</h2>
+<a class="btn btn-primary btn-sm" href="/Contractors/Create">New Client</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Registration Number</th>
+            <th>Model</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contractor in Model.listContractorsVehicles)
+        {
+                <tr>
+                    <td>@contractor.type</td>
+                    <td>@contractor.registration</td>
+                    <td>@contractor.model</td>
+                    <td>@contractor.weight</td>
+                </tr>
+        }
+    </tbody>
+</table>

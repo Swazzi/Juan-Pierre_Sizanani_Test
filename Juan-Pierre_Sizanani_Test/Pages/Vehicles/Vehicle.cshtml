@@ -1,0 +1,37 @@
+﻿@page
+@model Juan_Pierre_Sizanani_Test.Pages.Vehicles.VehicleModel
+@{
+}
+
+<br>
+<h2>List of Vehicles</h2>
+<a class="btn btn-primary btn-sm" href="/Vehicles/Create">New Client</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Registration Number</th>
+            <th>Model</th>
+            <th>Weight</th>
+            <th>Contractor ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model.listVehicles)
+        {
+            <tr>
+                <td>@vehicle.id</td>
+                <td>@vehicle.type</td>
+                <td>@vehicle.registration</td>
+                <td>@vehicle.model</td>
+                <td>@vehicle.weight</td>
+                <td>@vehicle.contractorID</td>
+                <td>
+                    <a class"btn btn-primary btn-sm" href="/Vehicles/Edit?id=@vehicle.id">Edit</a>
+                    <a class"btn btn-primary btn-sm" href="/Vehicles/Delete?id=@vehicle.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
